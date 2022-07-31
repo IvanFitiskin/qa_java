@@ -24,7 +24,7 @@ public class FelineTest {
     }
 
     @Test
-    public void getFamilyIsFelineString() {
+    public void getFamilyWithoutArgumentStaticFelineString() {
         Feline feline = new Feline();
 
         assertEquals(
@@ -44,9 +44,10 @@ public class FelineTest {
     @Parameters({
             "0, 0",
             "1, 1",
-            "5, 5"
+            "5, 5",
+            "-1, -1"
     })
-    public void getKittensWithPositiveArgumentSameResult(int argumentValue, int expectedValue) {
+    public void getKittensWithIntArgumentSameResult(int argumentValue, int expectedValue) {
         Feline feline = new Feline();
 
         assertEquals( expectedValue, feline.getKittens(argumentValue));

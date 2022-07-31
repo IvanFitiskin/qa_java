@@ -14,11 +14,10 @@ import static org.junit.Assert.assertEquals;
 public class CatTest {
 
     @Mock
-    Predator predator;
+    Feline feline;
 
     @Test
     public void getSoundWithoutArgumentStaticString() {
-        Feline feline = new Feline();
         Cat cat = new Cat(feline);
 
         assertEquals("Мяу", cat.getSound());
@@ -26,10 +25,9 @@ public class CatTest {
 
     @Test
     public void getFoodIsPredatorFoods() throws Exception {
-        Feline feline = new Feline();
         Cat cat = new Cat(feline);
 
-        Mockito.when(predator.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
 
         assertEquals(
                 "getFood() did not return values for Predator",

@@ -24,7 +24,7 @@ public class AnimalTest {
 
     @Test
     @Parameters(method = "parametersToGetFoodTest")
-    public void getFoodStringCorrectValueListOfFoods(
+    public void getFoodStringCorrectStringListOfFoods(
             String argumentValue,
             List<String> expectedValue
     ) throws Exception {
@@ -51,7 +51,7 @@ public class AnimalTest {
 
     private Object[] parametersToGetFoodThrowsExceptionTest() {
         return new Object[] {
-                // Первая буква в слове "Травоядноe" указана латиницей
+                // Последняя буква в слове "Травоядноe" указана латиницей
                 new Object[] { "Травоядноe" },
                 new Object[] { "Всеядный" },
         };
