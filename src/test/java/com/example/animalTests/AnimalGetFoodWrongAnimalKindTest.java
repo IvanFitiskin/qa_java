@@ -21,6 +21,7 @@ public class AnimalGetFoodWrongAnimalKindTest {
                 // Последняя буква в слове "Травоядноe" указана латиницей
                 { "Травоядноe" },
                 { "Всеядный" },
+                { "" },
         };
     }
 
