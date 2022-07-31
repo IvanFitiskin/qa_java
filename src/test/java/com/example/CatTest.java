@@ -24,16 +24,12 @@ public class CatTest {
     }
 
     @Test
-    public void getFoodIsPredatorFoods() throws Exception {
+    public void whenGetFoodIsCatFoods() throws Exception {
         Cat cat = new Cat(feline);
 
         Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
 
-        assertEquals(
-                "getFood() did not return values for Predator",
-                List.of("Животные", "Птицы", "Рыба"),
-                cat.getFood()
-        );
+        assertEquals(List.of("Животные", "Птицы", "Рыба"), cat.getFood());
     }
 
 }

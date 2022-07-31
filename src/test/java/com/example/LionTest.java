@@ -30,32 +30,28 @@ public class LionTest {
     public void doesHaveManeIsTrue() throws Exception {
         Lion lion = new Lion(feline, "Самец");
 
-        assertTrue("lion.hasMane should be True", lion.doesHaveMane());
+        assertTrue(lion.doesHaveMane());
     }
 
     @Test
     public void doesHaveManeIsFalse() throws Exception {
         Lion lion = new Lion(feline, "Самка");
 
-        assertFalse("lion.hasMane should be False", lion.doesHaveMane());
+        assertFalse(lion.doesHaveMane());
     }
 
     @Test(expected = Exception.class)
-    public void lionConstructorThrowsExceptionWhenInitialisedWithWrongSex() throws Exception {
+    public void lionConstructorWrongSexThrowsException() throws Exception {
         // Первая буква в слове "Cамка" указана латиницей
         new Lion(feline, "Cамка");
     }
 
     @Test
-    public void getFoodIsPredatorFoods() throws Exception {
+    public void whenGetFoodIsFelineFoods() throws Exception {
         Lion lion = new Lion(feline, "Самка");
         Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
 
-        assertEquals(
-                "getFood() did not return values for Predator",
-                List.of("Животные", "Птицы", "Рыба"),
-                lion.getFood()
-        );
+        assertEquals(List.of("Животные", "Птицы", "Рыба"), lion.getFood());
     }
 
 }

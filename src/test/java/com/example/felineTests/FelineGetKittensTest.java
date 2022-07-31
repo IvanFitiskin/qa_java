@@ -29,7 +29,7 @@ public class FelineGetKittensTest {
     }
 
     @Test
-    public void getKittensWithIntArgumentSameResult() {
+    public void getKittensIntArgumentSameIntResult() {
         Feline feline = new Feline();
 
         assertEquals( expectedValue, feline.getKittens(argumentValue));

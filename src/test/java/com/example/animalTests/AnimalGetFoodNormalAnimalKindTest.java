@@ -31,7 +31,7 @@ public class AnimalGetFoodNormalAnimalKindTest {
     }
 
     @Test
-    public void getFoodStringExpectedStringListOfFoods() throws Exception {
+    public void getFoodStringExpectedListOfFoods() throws Exception {
         Animal animal = new Animal();
 
         assertEquals(expectedValue, animal.getFood(argumentValue));
