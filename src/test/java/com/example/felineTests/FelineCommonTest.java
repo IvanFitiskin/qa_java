@@ -2,17 +2,23 @@ package com.example.felineTests;
 
 import com.example.Feline;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 
+@RunWith(MockitoJUnitRunner.class)
 public class FelineCommonTest {
 
     @Test
     public void eatMeatWithoutArgumentIsFelineFoods() throws Exception {
-        Feline feline = new Feline();
+        Feline feline = Mockito.spy(new Feline());
+
+        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
 
         assertEquals(List.of("Животные", "Птицы", "Рыба"), feline.eatMeat());
     }
