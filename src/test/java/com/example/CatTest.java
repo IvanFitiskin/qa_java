@@ -20,7 +20,7 @@ public class CatTest {
     public void getSoundWithoutArgumentStaticString() {
         Cat cat = new Cat(feline);
 
-        assertEquals("Мяу", cat.getSound());
+        assertEquals("Return incorrect string value","Мяу", cat.getSound());
     }
 
     @Test
@@ -29,7 +29,7 @@ public class CatTest {
 
         Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
 
-        assertEquals(List.of("Животные", "Птицы", "Рыба"), cat.getFood());
+        assertEquals("List of food is not corrected", List.of("Животные", "Птицы", "Рыба"), cat.getFood());
     }
 
 }

@@ -20,21 +20,21 @@ public class FelineCommonTest {
 
         Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
 
-        assertEquals(List.of("Животные", "Птицы", "Рыба"), feline.eatMeat());
+        assertEquals("List of food is not corrected", List.of("Животные", "Птицы", "Рыба"), feline.eatMeat());
     }
 
     @Test
     public void getFamilyWithoutArgumentStaticFelineString() {
         Feline feline = new Feline();
 
-        assertEquals("Кошачьи", feline.getFamily());
+        assertEquals("Return incorrect string value", "Кошачьи", feline.getFamily());
     }
 
     @Test
     public void getKittensWithoutArgumentIntOne() {
         Feline feline = new Feline();
 
-        assertEquals( 1, feline.getKittens());
+        assertEquals("Return value should be 1", 1, feline.getKittens());
     }
 
 }

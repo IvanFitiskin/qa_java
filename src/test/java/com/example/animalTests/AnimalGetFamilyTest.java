@@ -13,6 +13,7 @@ public class AnimalGetFamilyTest {
         Animal animal = new Animal();
 
         assertEquals(
+                "Return incorrect string value",
                 "Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи",
                 animal.getFamily()
         );

@@ -19,25 +19,25 @@ public class LionTest {
     Feline feline;
 
     @Test
-    public void whenGetKittensIsOne() throws Exception {
+    public void getKittensWithoutArgumentIntOne() throws Exception {
         Lion lion = new Lion(feline, "Самец");
         Mockito.when(feline.getKittens()).thenReturn(1);
 
-        assertEquals(1, lion.getKittens());
+        assertEquals("Return value should be 1", 1, lion.getKittens());
     }
 
     @Test
     public void doesHaveManeIsTrue() throws Exception {
         Lion lion = new Lion(feline, "Самец");
 
-        assertTrue(lion.doesHaveMane());
+        assertTrue("hasMane property value is not corrected", lion.doesHaveMane());
     }
 
     @Test
     public void doesHaveManeIsFalse() throws Exception {
         Lion lion = new Lion(feline, "Самка");
 
-        assertFalse(lion.doesHaveMane());
+        assertFalse("hasMane property value is not corrected", lion.doesHaveMane());
     }
 
     @Test(expected = Exception.class)
@@ -51,7 +51,7 @@ public class LionTest {
         Lion lion = new Lion(feline, "Самка");
         Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
 
-        assertEquals(List.of("Животные", "Птицы", "Рыба"), lion.getFood());
+        assertEquals("List of food is not corrected", List.of("Животные", "Птицы", "Рыба"), lion.getFood());
     }
 
 }
